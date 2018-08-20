@@ -71,5 +71,4 @@ resource "google_compute_route" "kubernetes_worker" {
   next_hop_ip = "${format("10.240.0.2%d", count.index)}"
   dest_range  = "${format("10.200.%d.0/24", count.index)}"
 
-  depends_on = ["google_compute_subnetwork.kubernetes"]
 }
